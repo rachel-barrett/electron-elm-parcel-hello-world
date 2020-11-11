@@ -9,4 +9,4 @@ Steps to create this project:
 
 5. Separate into main and renderer processes
 6. Use separate directories for main and renderer processes
-7. Make main and renderer process communicate with ipc.
+7. Make main and renderer process communicate via ipc.

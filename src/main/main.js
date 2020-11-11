@@ -1,4 +1,7 @@
-const { app, BrowserWindow } = require('electron') // import the app and BrowserWindow modules of the electron package
+const electron = require('electron')
+const app = electron.app
+const BrowserWindow = electron.BrowserWindow
+const ipcMain = electron.ipcMain
 
 function createWindow () {
   const mainWindow = new BrowserWindow({
@@ -14,3 +17,8 @@ function createWindow () {
 }
 
 app.on('ready', createWindow)
+
+ipcMain.on('channel', (event, args) => {
+  console.log(args) //logs the message to terminal
+  event.returnValue = 'Hello from the main process!'
+})
