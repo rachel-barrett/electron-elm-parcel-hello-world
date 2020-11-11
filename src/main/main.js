@@ -9,7 +9,7 @@ function createWindow () {
     }
   })
 
-  mainWindow.loadFile('index.html')
+  mainWindow.loadURL(`file://${__dirname}/../renderer/index.html`)
   mainWindow.webContents.openDevTools()
 }
 

@@ -2,7 +2,7 @@
   "name": "electron-elm-parcel-hello-world",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "src/main/main.js",
   "scripts": {
     "start": "electron ."
   },
