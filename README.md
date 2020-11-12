@@ -10,3 +10,7 @@ Steps to create this project:
 5. Separate into main and renderer processes
 6. Use separate directories for main and renderer processes
 7. Make main and renderer process communicate via ipc.
+
+8. Use parcel to bundle the front end. For this, need to run the following command to add some dev dependencies: `npm install -save-dev parcel-bundler concurrently cross-env wait-on`
+
+9. Use Elm instead of pure js.

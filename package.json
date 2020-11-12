@@ -4,12 +4,19 @@
   "description": "",
   "main": "src/main/main.js",
   "scripts": {
-    "start": "electron ."
+    "parcel-start": "parcel --port 3000 src/renderer/index.html --out-dir parcel-build/dev",
+    "parcel-build": "parcel build src/renderer/index.html --out-dir parcel-build/prd --public-url ./",
+    "electron-start": "electron .",
+    "start": "concurrently \"cross-env BROWSER=none npm run parcel-start\" \"wait-on http://localhost:3000 && npm run electron-start\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^10.1.5"
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.2",
+    "electron": "^10.1.5",
+    "parcel-bundler": "^1.12.4",
+    "wait-on": "^5.2.0"
   }
 }

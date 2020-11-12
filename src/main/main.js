@@ -3,6 +3,8 @@ const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 const ipcMain = electron.ipcMain
 
+const isDev = !app.isPackaged
+
 function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 800,
@@ -12,7 +14,11 @@ function createWindow () {
     }
   })
 
-  mainWindow.loadURL(`file://${__dirname}/../renderer/index.html`)
+  mainWindow.loadURL(
+    isDev
+      ? "http://localhost:3000"
+      : `file://${__dirname}/../../parcel-build/prd/index.html`
+    )
   mainWindow.webContents.openDevTools()
 }
 
