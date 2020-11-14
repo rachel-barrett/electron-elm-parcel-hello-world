@@ -1,0 +1,2 @@
+Get the content security policy to work
+Make use of send and receive ports

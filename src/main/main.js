@@ -39,5 +39,5 @@ app.on('window-all-closed', function () {
 
 ipcMain.on('channel', (event, args) => {
   console.log(args) //logs the message to terminal
-  event.returnValue = 'Hello from the main process!'
+  event.returnValue = 'Hello from the main process!' 
 })
